@@ -7,101 +7,117 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link type="text/css" rel="stylesheet" href="./resources/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
     <title>Mi Economia</title>
 
 </head>
 
 <body>
-    <section class="datos">
+    <header>
+        <div id="botonmode">
+            <button id="bdark" class="btn waves-effect waves-light black"><i class='fas fa-moon'></i></button>
+        </div>
+    </header>
+    <div>
         <h1 class="aplicacion">Aplicacion Para Gastos</h1>
-        <div class="row">
-            <div class="" id="formulario">
-                <div class="">
-                    <form id="transactionForm">
-                        <div class="claseFormulario">
-                            <p>
-                                <span>Transaccion</span>
-                                <label>
-                                    <i class="material-icons">call_made</i>
-                                  <input required value="Ingreso" name="transactionType" type="radio" checked />
-                                  <span>Ingreso</span>
-                                </label>
-                                <label>
-                                    <i class="material-icons">call_received</i>
-                                  <input required value="Gasto" name="transactionType" type="radio" />
-                                  <span>Gasto</span>
-                                </label>
-                            </p>
-                        </div>
-                        <div class="input-field ">
-                            <input id="transactionDescription" required name="transactionDescription" type="text" class="validate">
-                            <label for="transactionDescription">Descripcion</label>
-                        </div>
-                        <div class="input-field ">
-                            <input min="0" required id="transactionAmount" type="number" class="validate" name="transactionAmount">
-                            <label for="transactionAmount">Monto</label>
-                        </div>
+    </div>
 
-                        <div>
-                            <label>Categoria</label>
-                            <select class="browser-default" required id="transactionCategory" name="transactionCategory">
+    <div class="row">
+        <div class="" id="formulario">
+            <div class="">
+                <form id="transactionForm">
+                    <div class="claseFormulario">
+                        <p>
+                            <span>Transaccion</span>
+                            <label>
+                                <i class="material-icons">call_received</i>
+                                <input required value="Gasto" name="transactionType" type="radio" />
+                                <span>Gasto</span>
+                            </label>
+                            <label>
+                                <i class="material-icons">call_made</i>
+                                <input required value="Ingreso" name="transactionType" type="radio" checked />
+                                <span>Ingreso</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="input-field ">
+                        <input id="transactionDescription" required name="transactionDescription" type="text" class="validate">
+                        <label for="transactionDescription">Describe tu gasto o ingreso</label>
+                    </div>
+                    <div class="input-field ">
+                        <input min="0" required id="transactionAmount" type="number" class="validate" name="transactionAmount">
+                        <label for="transactionAmount">Precio/Monto</label>
+                    </div>
+
+
+                    <div>
+                        <label>Categoria</label>
+                        <select class="browser-default" required id="transactionCategory" name="transactionCategory">
                                 <option value="" disabled selected>Escoge una Opcion</option>
+                                <option value="Arriendo">Arriendo</option>
+                                <option value="Comida">Aseo</option>
                                 <option value="Comida">Comida</option>
                                 <option value="Mercado">Mercado</option>
                                 <option value="Transporte">Transporte</option>
                                 <option value="Trabajo">Trabajo</option>
-                                <option value="Ventas">Ventas</option>
                                 <option value="Fiesta">Fiesta</option>
+                                <option value="Ventas">Ventas</option>
                             </select>
-                        </div>
+                    </div>
 
-                        <div class="claseFormulario">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                    <div class="claseFormulario">
+                        <button class="btn waves-effect waves-light blue" type="submit" name="action">Enviar
                                 <i class="material-icons right">send</i>
                             </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
-
-            <div>
-                <table class="striped" id="transactionTable">
-                    <tr>
-                        <th>
-                            Tipo
-                        </th>
-                        <th>
-                            Descripcion
-                        </th>
-                        <th>
-                            Monto
-                        </th>
-                        <th>
-                            Categoria
-                        </th>
-                        <th>
-                            Eliminar
-                        </th>
-                    </tr>
-                </table>
-            </div>
-
         </div>
+
+        <div class="#42a5f5 blue lighten-1">
+            <table class="striped" id="transactionTable">
+                <tr>
+                    <th>
+                        Tipo
+                    </th>
+                    <th>
+                        Descripcion
+                    </th>
+                    <th>
+                        Monto
+                    </th>
+                    <th>
+                        Categoria
+                    </th>
+                    <th>
+                        Eliminar
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
 
 
 
     </section>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="resources/js/script.js"></script>
-
 </body>
 
 </html>
